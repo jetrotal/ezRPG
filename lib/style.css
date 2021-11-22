@@ -46,6 +46,18 @@ a {
     color: var(--btHoverColor)
 }
 
+#canvas {
+    display: block;
+    top: 0;
+    margin: 0 auto;
+    width: 640px;
+    height: 480px;
+    border: 0;
+    image-rendering: pixelated;
+    image-rendering: crisp-edges;
+    outline: none;
+}
+
 #centerFrame {
     padding: 35px 10px  20px 10px;
     border-radius: 25px;
