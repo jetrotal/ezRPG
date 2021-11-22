@@ -1,0 +1,45 @@
+<div id="centerFrame">
+  <div class="header alert gameName">
+    <a onclick="displayInfo()" class="mdi mdi-12px mdi-information gameVersion"></a>
+  </div>
+  <div class="container main">
+    <div>
+      <div id="game_container" style="">
+        <canvas id="canvas" tabindex="-1">
+          <div class="keypad">
+            <div class="keyPad" id="topL" style="display:none"></div>
+            <div class="keyPad" id="topR" style="display:none"></div>
+            <div class="keyPad" id="bottomL" style="display:none"></div>
+            <div class="keyPad" id="bottomR" style="display:none"></div>
+          </div>
+        </canvas>
+      </div>
+      <div class="footer">
+        <div class="footer" id="footA"></div>
+        <div class="footer" id="footB"></div>
+        <div class="footer" id="footC"></div>
+      </div>
+    </div>
+    <ul id="chatbox">
+      <div id="messages">
+        <li class="alert">
+          <div>
+            <br>🔥<span class="displayName">Welcome </span>🔥
+            <br> <a onclick="selectPlayername()"> Change your Nickname </a>
+            <br>
+            <br>
+          </div>
+        </li>
+        <li class="alert">
+          <div>Press 3 to hide/show the connection status window</div>
+        </li>
+      </div>
+      <div class="footer">
+        <form class="chatform" action="javascript:chatInputActionFired()">
+          <input id="chatInput" placeholder="Type a Message" type="text" autocomplete="off" maxlength="200">
+          <input class="submit-button" type="submit" value="send">
+        </form>
+      </div>
+    </ul>
+  </div>
+</div>
