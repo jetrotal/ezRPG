@@ -1,0 +1,423 @@
+@import url("https://maxcdn.bootstrapcdn.com/bootstrap/3.1.1/css/bootstrap.min.css");
+/* 👇
+Icon Classes from:
+https://pictogrammers.github.io/@mdi/font/6.1.95/
+*/
+@import url("https://cdn.jsdelivr.net/npm/@mdi/font@6.1.95/css/materialdesignicons.min.css");
+
+:root {
+  --gameName:"cool";
+  --gameVersion:"10";
+  --playerName: "";
+  
+  --bgColor: #292b2f;
+  --fontColorA: #fff;
+  --fontColorB: #000;
+  
+  --btColor: #36373a;
+  --btHoverColor: #3c8025;
+
+  --colorRangeA:#9A2720;
+	--colorRangeB:#ff5b32;  
+
+  --gameBoxColor: #000000;
+  --containerColor: #242529;
+  
+  --chatColor: #36373a;
+  --meChatColor: #315526;
+  
+  --alertColor: #181818;
+  --warningColor: #fcd000;
+  --errorColor: #ff3c41;
+  
+  --numericEvents:none;
+  --numericOpacity:0;
+}
+
+body {
+    background-color: var(--bgColor);
+    height: 100vh;
+    overflow: hidden;
+    background-size: 32px;
+    background-image: url('data:image/svg+xml,%3Csvg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 2 2"%3E%3Cpath d="M1 2V0h1v1H0v1z" fill-opacity=".05"/%3E%3C/svg%3E')
+}
+a {
+    cursor: pointer;
+    color: var(--btHoverColor)
+}
+
+#centerFrame {
+    padding: 35px 10px  20px 10px;
+    border-radius: 25px;
+    background: var(--containerColor);
+    margin: 0;
+    top: 50%;
+    -ms-transform: translate(-50%,-50%) scale(0);
+    transform: translate(-50%,-50%) scale(0)
+}
+
+.gameName::before {
+    content: var(--gameName)
+}
+.gameVersion::after {
+    content: var(--gameVersion)
+}
+
+.displayName::after {
+    content: var(--playerName)
+}
+.container.main {
+}
+.container {
+    width: fit-content;
+    position: relative;
+    display: flex;
+    bottom: 0
+}
+
+#centerFrame,.header {
+width: max-content;
+    left: 50%;
+    position: absolute
+}
+.header {
+    border-radius: 10px;
+    background: var(--alertColor);
+    float: right;
+    top: -25px;
+    transform: translatex(-50%)
+}
+
+.footer {
+    display: flex;
+    height: 50px;
+    margin-top: 10px
+}
+#footA {
+    margin-left: -5px;
+    justify-content: left
+}
+#footB {
+    width: 100%;
+    justify-content: center
+}
+#footC {
+    margin-right: -5px;
+    justify-content: right
+}
+
+#game_container {
+    width: 640px!important;
+    height: 480px;
+    padding: 0;
+    background-color: var(--gameBoxColor);
+    border: 1px var(--gameBoxColor);
+    border-radius: 5px
+}
+
+#chatbox {
+    display: block;
+    margin: 0 0 0 15px;
+    max-width: 900px;
+    list-style: none;
+    padding: 0
+}
+#chatbox li {
+    margin-bottom: 10px
+}
+#chatbox .alert {
+    text-align: center;
+    color: var(--fontColorA);
+    margin: -10px 0 0;
+    position: relative
+}
+#chatbox .alert * {
+    border-radius: 5px;
+    display: inline-block;
+    padding: 2px 10px;
+    margin: 0;
+    background: var(--alertColor)
+}
+#chatbox .warning * {
+    color: var(--fontColorB);
+    background: var(--warningColor)
+}
+#chatbox .error * {
+    background: var(--errorColor);
+    color: var(--fontColorB)
+}
+
+#chatbox li .msgWrap {
+    background: var(--chatColor);
+    border-radius: 15px 10px 10px 0;
+    position: relative;
+    padding: 5px 12px;
+    float: left;
+    margin: 0 0 0 8px;
+    min-width: 100px;
+    transform: translateX(-11px);
+    border-right: 0 solid
+}
+#chatbox li .flip,#chatbox li .flip .msg * {
+    transform: scaleX(-1)
+}
+#chatbox li .me {
+    background: var(--meChatColor);
+    border-radius: 10px 10px 0 15px;
+    transform: translateX(-11px) scaleX(-1)
+}
+
+#chatbox li #user,#chatbox li .me #message,#chatbox li .me #user,body {
+    color: var(--fontColorA)
+}
+
+#chatbox br {
+    clear: both;
+    line-height: 18px
+}
+#chatbox li #user {
+    font-size: 9px;
+    opacity: .5
+}
+#chatbox li #message {
+    line-break: anywhere
+}
+#chatbox #messages {
+    width: 450px;
+    height: 480px;
+    margin-bottom: 5px;
+    overflow-y: scroll;
+    overflow-x: hidden;
+    padding: 0 15px 0 0
+}
+
+.chatform {
+    position: relative;
+    top: 5px;
+    display: contents
+}
+#chatInput {
+    resize: none;
+    width: 100%;
+    background-color: transparent;
+    padding: 1em;
+    border-radius: 8px 0 0 8px
+}
+#chatInput,#chatbox li #message,.icons,.submit-button {
+    color: var(--fontColorA)
+}
+#chatInput,.submit-button {
+    margin: 0;
+    border: 2px solid var(--meChatColor);
+    font-family: inherit;
+    font-size: 1em
+}
+.submit-button {
+    border: 0;
+    width: 25%;
+    background-color: var(--meChatColor);
+    border-left: 0;
+    border-radius: 0 8px 8px 0
+}
+
+[class*=mdi-]::before {
+    font-family: "Material Design Icons"
+}
+
+.icons::before {
+    font-weight: 100;
+    font-size: 30px;
+    position: relative;
+    top: 5px
+}
+.icons {
+    margin: -10px 5px;
+    height: 50px;
+    cursor: pointer;
+    text-align: center;
+    background: var(--btColor);
+    border-radius: 5px;
+    position: relative;
+    padding: 0 10px 10px;
+    float: left;
+    border-right: 0 solid
+}
+.icons:active,.icons:hover {
+    text-decoration: none;
+    color: var(--fontColorA);
+    transition: all .3s ease
+}
+.icons:active {
+    background-color: var(--btHoverColor);
+    transition: all .01s ease
+}
+
+::-webkit-scrollbar {
+    width: 8px
+}
+::-webkit-scrollbar-track {
+    background: #00000011;
+    border-radius: 10px
+}
+::-webkit-scrollbar-thumb {
+    background: var(--btColor);
+    border-radius: 10px
+}
+::-webkit-scrollbar-thumb:hover {
+    background: var(--btHoverColor)
+}
+
+input[type="range"]{
+  -webkit-appearance:none;
+  position:absolute;
+  width:160px;
+  height:20px;
+  margin:-100px 10px;
+  background: linear-gradient(to right, var(--colorRangeA) 0%, var(--colorRangeA) 100%);
+  background-size:150px 10px;
+  background-position:center;
+  background-repeat:no-repeat;
+  overflow:hidden;
+  outline: none;
+  transform:rotate(-90deg)
+}
+input[type="range"]::-webkit-slider-thumb{
+  -webkit-appearance:none;
+  width:20px;
+  height:20px;
+  background:var(--colorRangeB);
+  position:relative;
+  z-index:3;
+}
+
+/* keypad */
+:root {
+  --pad-colorText: #FFF;
+  --pad-colorBG: #44485755;
+  --pad-colorBG2: #444857;
+  --pad-colorStroke: #000;
+  --pad-arrowW: 60px;
+  --pad-arrowH: 60px;
+  --pad-keyW: 60px;
+  --pad-keyH: 60px;
+}
+
+.keyPad {
+  pointer-events: none;
+}
+#topL.keyPad {
+  position: absolute;
+  left: 20px;
+  bottom: 30px;
+  display: none;
+}
+#topR.keyPad {
+  position: absolute;
+  right: 10px;
+  bottom: 10px;
+  display: none;
+}
+#bottomL.keyPad {
+  position: absolute;
+  left: 20px;
+  bottom: 30px;
+  display: none;
+}
+#bottomR.keyPad {
+  position: absolute;
+  right: 10px;
+  bottom: 10px;
+  display: none;
+}
+
+.keyPad .arrow {
+  opacity: 0.25;
+  box-shadow: 1.2px -1px #00000066;
+  width: 40px;
+  height: 40px;
+  border-radius: 15%;
+  background-color: var(--pad-colorBG2);
+}
+.keyPad .arrow,
+.keyPad .arrow::after,
+.keyPad .input {
+  cursor: pointer;
+  pointer-events: all;
+  display: flex;
+  justify-content: center;
+}
+.keyPad .arrow::after {
+  width: 40px;
+  height: 40px;
+  border-radius: 15%;
+  background-color: var(--pad-colorBG2);
+  content: "";
+  margin-top: 40%;
+  transform: rotate(45deg) scale(0.75);
+  overflow: hidden;
+}
+
+.keyPad .input:before {
+  color: var(--pad-colorText);
+}
+.keyPad .input {
+  margin: -5px;
+  align-items: center;
+  border-radius: 50%;
+  width: var(--pad-keyW);
+  height: var(--pad-keyW);
+  background-color: var(--pad-colorBG);
+  box-shadow: 1px 1px #00000022;
+}
+
+.keyPad .input.shift,
+.keyPad .input.small {
+  opacity: var(--numericOpacity);
+  pointer-events: var(--numericEvents);
+}
+.keyPad .input.shift,
+.keyPad .input.small, .keyPad .input.ctrl {
+  position: relative;
+  margin: -6px !important;
+  left: 5px;
+}
+.keyPad .input.shift {
+  transform: translateX(-19px) translateY(0);
+}
+.keyPad .input.small, .keyPad .input.ctrl {
+  transform: translateX(-10px) translateY(37px) scale(0.7);
+}
+.arrow:hover,
+.keyPad .input:hover {
+  background-color: var(--pad-colorBG2);
+  opacity: 0.5;
+  transition: all 0.3s ease;
+}
+
+.arrow:active,
+.keyPad .input:active {
+  background-color: var(--pad-colorBG2);
+  transition: all 0.01s linear;
+}
+.keyPad .line {
+  display: flex;
+}
+.keyPad .dummy{
+  pointer-events:all;
+  opacity: 0 !important;
+  z-index: -999999;
+}
+.keyPad .dummy::after {
+   display:none;
+}
+
+.keyPad .BT{
+  z-index: 1;
+}
+
+.keyPad .flip::after {
+  margin-top: -40% !important;
+}
+.keyPad .rot90 {
+  transform: rotate(90deg);
+}
