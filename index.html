@@ -1,56 +1,59 @@
-<html lang="en"><head>
+<html lang="en">
+
+<head>
   <title>EasyRPG layer</title>
   <meta charset="utf-8">
   <meta name="description" content="EasyRPG Player">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <link rel="stylesheet" href="lib/style.css">
 </head>
-  <body>
-<div id="status"></div>
-<div id="centerFrame">
-  <div class="header alert gameName">
-    <a onclick="displayInfo()" class="mdi mdi-12px mdi-information gameVersion"></a>
-  </div>
-  <div class="container main">
-    <div>
-      <div id="game_container" style="">
-        <canvas id="canvas" tabindex="-1">
-        </canvas>
-      </div>
-      <div class="footer">
-        <div class="footer" id="footA"></div>
-        <div class="footer" id="footB"></div>
-        <div class="footer" id="footC"></div>
-      </div>
+
+<body>
+  <div id="status"></div>
+  <div id="centerFrame">
+    <div class="header alert gameName">
+      <a onclick="displayInfo()" class="mdi mdi-12px mdi-information gameVersion"></a>
     </div>
-    <ul id="chatbox">
-      <div id="messages">
-        <li class="alert">
-          <div>
-            <br>🔥<span class="displayName">Welcome </span>🔥
-            <br> <a onclick="selectPlayername()"> Change your Nickname </a>
-            <br>
-            <br>
-          </div>
-        </li>
-        <li class="alert">
-          <div>Press 3 to hide/show the connection status window</div>
-        </li>
+    <div class="container main">
+      <div>
+        <div id="game_container" style="">
+          <canvas id="canvas" tabindex="-1">
+          </canvas>
+        </div>
+        <div class="footer">
+          <div class="footer" id="footA"></div>
+          <div class="footer" id="footB"></div>
+          <div class="footer" id="footC"></div>
+        </div>
       </div>
-      <div class="footer">
-        <form class="chatform" action="javascript:chatInputActionFired()">
-          <input id="chatInput" placeholder="Type a Message" type="text" autocomplete="off" maxlength="200">
-          <input class="submit-button" type="submit" value="send">
-        </form>
-      </div>
-    </ul>
+      <ul id="chatbox">
+        <div id="messages">
+          <li class="alert">
+            <div>
+              <br>🔥<span class="displayName">Welcome </span>🔥
+              <br> <a onclick="selectPlayername()"> Change your Nickname </a>
+              <br>
+              <br>
+            </div>
+          </li>
+          <li class="alert">
+            <div>Press 3 to hide/show the connection status window</div>
+          </li>
+        </div>
+        <div class="footer">
+          <form class="chatform" action="javascript:chatInputActionFired()">
+            <input id="chatInput" placeholder="Type a Message" type="text" autocomplete="off" maxlength="200">
+            <input class="submit-button" type="submit" value="send">
+          </form>
+        </div>
+      </ul>
+    </div>
   </div>
-</div>
-<div class="keypad">
-            <div class="keyPad" id="topL" style="display:none"></div>
-            <div class="keyPad" id="topR" style="display:none"></div>
-            <div class="keyPad" id="bottomL" style="display:none"></div>
-            <div class="keyPad" id="bottomR" style="display:none"></div>
-          </div>
+  <div class="keypad">
+    <div class="keyPad" id="topL" style="display:none"></div>
+    <div class="keyPad" id="topR" style="display:none"></div>
+    <div class="keyPad" id="bottomL" style="display:none"></div>
+    <div class="keyPad" id="bottomR" style="display:none"></div>
+  </div>
   <script type="text/javascript" src="lib/script.js"></script>
 </body>
