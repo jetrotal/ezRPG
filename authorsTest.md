@@ -1,5 +1,9 @@
-<section id="checklist"><section id="BattleWeapon"> <h2>BattleWeapon</h2> 
-<details> <summary>Details</summary><br><section id="BattleWeapon/Weapon.png">
+<section id="checklist"><h1>Authors</h1>
+<p dir="auto">The following EasyRPG RTP materials are licensed under a
+Creative Commons Attribution 4.0 International license.</p>
+<p dir="auto">License URL: <a href="https://creativecommons.org/licenses/by/4.0/" rel="nofollow">https://creativecommons.org/licenses/by/4.0/</a></p>
+<br><section id="BattleWeapon"> <h2>BattleWeapon</h2> 
+<details open=""> <summary>Details</summary><br><section id="BattleWeapon/Weapon.png">
  <table>
   <thead>
     <tr>
@@ -21,7 +25,7 @@
  </table>
 </section></details></section><br>
 <section id="CharSet"> <h2>CharSet</h2> 
-<details> <summary>Details</summary><br><section id="CharSet/Actor1.png">
+<details open=""> <summary>Details</summary><br><section id="CharSet/Actor1.png">
  <table>
   <thead>
     <tr>
